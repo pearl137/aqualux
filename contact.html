@@ -2,33 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Contact Us | Aqualux Beverages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Aqualux Beverages</title>
+
+    <!-- Google Font for Logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        /* Reset and general styles */
+        /* General Body Styles */
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            font-family: 'Arial', sans-serif;
             color: white;
-            background-color: #000; /* fallback if images fail */
         }
 
         /* Navbar */
         header {
-            background: #001f3f;
+            background: rgba(0,31,63,0.85); /* semi-transparent nav over background */
+            position: fixed;
+            width: 100%;
+            z-index: 10;
         }
         .navbar {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 10px 20px; /* smaller height */
+            padding: 10px 20px;
         }
         .logo {
-            font-size: 1.8em;
-            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
         }
         .logo span {
             font-weight: normal;
@@ -41,58 +48,50 @@
             color: white;
             text-decoration: none;
             font-size: 1em;
-            padding: 8px 12px;
-            transition: background 0.3s;
+            padding: 6px 10px;
         }
-        .nav-links a:hover,
         .nav-links a.active {
-            background: #003366;
-            border-radius: 5px;
+            border-bottom: 2px solid #fff;
         }
 
-        /* Section Styles */
-        section {
+        /* Hero Section with Full-Screen Background */
+        .contact-hero {
             position: relative;
+            height: 100vh;
+            width: 100%;
+            background-image: url('images/down.jpeg');
+            background-size: cover; /* fills screen, preserves aspect ratio */
+            background-position: center center;
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            min-height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
-        section::before {
+        .contact-hero::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
+            top:0; left:0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: 20px;
-        }
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
-        .process-step {
-            margin-bottom: 15px;
+            background: rgba(0,0,0,0.5); /* overlay for readability */
         }
 
-        /* Section Background Images */
-        #who-we-are { background-image: url('images/water-bottle.jpeg'); }
-        #production-process { background-image: url('images/terry.jpeg'); }
-        #commitment { background-image: url('images/cheluu.jpeg'); }
+        /* Contact Details Overlay */
+        .contact-details-overlay {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            padding: 20px;
+            z-index: 1;
+        }
+        .contact-details-overlay h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .contact-details-overlay p {
+            font-size: 1.5em;
+            margin: 8px 0;
+        }
 
         /* Footer */
         footer {
@@ -102,74 +101,43 @@
             font-size: 0.9em;
         }
 
-        /* Responsive adjustments */
+        /* Responsive */
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
-            }
-            h2 { font-size: 2em; }
-            p { font-size: 1em; }
+            .contact-details-overlay h1 { font-size: 2em; }
+            .contact-details-overlay p { font-size: 1.2em; }
+            .nav-links { gap: 15px; }
+            .logo { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">AQUALUX <span>Beverages</span></div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="product.html">Products</a>
-                <a href="about.html" class="active">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Who We Are Section -->
-    <section id="who-we-are">
-        <div class="content">
-            <h2>Who We Are</h2>
-            <p>
-                At Aqualux Beverages, we are committed to providing the purest and most refreshing drinking water. 
-                Founded with a mission to promote health, wellness, and sustainability, our team blends innovation 
-                with care to deliver products that our customers can trust. We take pride in our transparency, quality, 
-                and passion for excellence in every drop.
-            </p>
+<header>
+    <nav class="navbar">
+        <div class="logo">AQUALUX <span>Beverages</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Water Production Process Section -->
-    <section id="production-process">
-        <div class="content">
-            <h2>Our Water Production Process</h2>
-            <p class="process-step"><strong>1. Source Selection:</strong> We select natural water sources that meet the highest standards of purity.</p>
-            <p class="process-step"><strong>2. Filtration:</strong> The water undergoes a multi-stage filtration process to remove impurities and ensure clarity.</p>
-            <p class="process-step"><strong>3. Mineral Optimization:</strong> Essential minerals are balanced for a crisp, refreshing taste.</p>
-            <p class="process-step"><strong>4. Bottling:</strong> Water is bottled under strict hygienic conditions to preserve its purity and freshness.</p>
-        </div>
-    </section>
+<!-- Hero Section with Full-Screen Background and Contact Details -->
+<section class="contact-hero">
+    <div class="contact-details-overlay">
+        <h1>Contact Us</h1>
+        <p><strong>Location:</strong> Manzini, Eswatini</p>
+        <p><strong>Phone:</strong> +268 7647 8769 | +268 7849 8491</p>
+        <p><strong>Email:</strong> info@aqualux.com</p>
+        <p><strong>Office Hours:</strong> Monday – Friday | 8:00 AM – 5:00 PM</p>
+    </div>
+</section>
 
-    <!-- Our Commitment Section -->
-    <section id="commitment">
-        <div class="content">
-            <h2>Our Commitment</h2>
-            <p>
-                At Aqualux Beverages, sustainability and community wellness are at the heart of everything we do. 
-                From eco-friendly packaging to initiatives that reduce water waste, we are dedicated to minimizing 
-                our environmental footprint. We actively support local projects that provide access to clean water 
-                and promote healthy living for communities around us.
-            </p>
-        </div>
-    </section>
+<footer>
+    <p>&copy; 2026 Aqualux Beverages (Pty) Ltd. All Rights Reserved.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2026 Aqualux Beverages (Pty) Ltd. All Rights Reserved.</p>
-    </footer>
 </body>
 </html>
