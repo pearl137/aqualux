@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Products | Aqualux Beverages (Pty) Ltd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP for scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5; /* lighter background */
+            color: #111;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        /* Fullscreen Sections */
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            scroll-snap-align: start;
+            position: relative;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 80px; /* space below fixed header */
+        }
+
+        /* Navbar */
+        header {
+            background: rgba(0, 31, 63, 0.85);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            padding: 10px 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo { font-weight: 700; font-size: 1.8em; color: #fff; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 1em; padding: 6px 10px; transition: color 0.3s; }
+        .nav-links a:hover { color: #00bfff; }
+        .nav-links a.active { border-bottom: 2px solid #fff; }
+
+        /* Hero Section Video */
+        .bg-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .hero-text {
+            z-index: 1;
+            max-width: 800px;
+            margin-top: 50px; /* bring hero text slightly down */
+        }
+        .hero-text h1 { font-size: 2.8em; margin-bottom: 10px; color: #111; }
+        .hero-text p { font-size: 1.3em; color: #333; }
+
+        /* Showcase Section */
+        .showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px; /* closer to heading */
+        }
+        .showcase-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .showcase-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .showcase-item:hover { transform: translateY(-5px); box-shadow: 0 12px 22px rgba(0,0,0,0.3); }
+        .showcase-item:hover img { transform: scale(1.03); }
+        .showcase-text {
+            position: absolute;
+            bottom: 10px; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.85);
+            color: #111;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
+        /* Footer */
+        footer {
+            background: #001f3f;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2em; }
+            .hero-text p { font-size: 1.1em; }
+            .showcase-item { height: 200px; }
+            .showcase-text { font-size: 0.9em; padding: 6px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Aqualux Beverages</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="product.html" class="active">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="product-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+        <h1>Where Aqualux Water Shines</h1>
+        <p>From gyms to events and collaborations, our water keeps everyone refreshed.From the first sip to the last,<br>
+             Aqualux delivers pure hydration with a deliciously smooth taste that keeps you refreshed throughout the day."</p>
+    </div>
+</section>
+
+<!-- Showcase Section -->
+<section class="showcase-section">
+    <div class="showcase">
+
+        <div class="showcase-item">
+            <img src="images/angel.jpeg" alt="Angel enjoying water">
+            <div class="showcase-text">Refreshing moments with Angel</div>
+        </div>
+
+        <div class="showcase-item">
+            <img src="images/swimming.jpeg" alt="Swimming session">
+            <div class="showcase-text">Hydration for swimmers</div>
+        </div>
+
+        <div class="showcase-item">
+            <img src="images/terry.jpeg" alt="Terry with water">
+            <div class="showcase-text">Terry’s fitness companion</div>
+        </div>
+
+        <div class="showcase-item">
+            <img src="images/che2 .jpeg" alt="Active lifestyle">
+            <div class="showcase-text">Active lifestyle, fully hydrated</div>
+        </div>
+
+        <div class="showcase-item">
+            <img src="images/mhlengi2.jpeg" alt="Mhlengi enjoying water">
+            <div class="showcase-text">Mhlengi’s healthy choice</div>
+        </div>
+
+        <div class="showcase-item">
+            <img src="images/gym.jpeg" alt="Gym hydration">
+            <div class="showcase-text">Hydration at the gym</div>
+        </div>
+
+        <div class="showcase-item">
+            <img src="images/collaboration.jpeg" alt="Collaboration event">
+            <div class="showcase-text">Proud collaborations</div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Aqualux Beverages (Pty) Ltd. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Auto-scroll through sections
+    let currentSection = 0;
+    const sections = document.querySelectorAll("section");
+
+    function autoScroll() {
+        currentSection++;
+        if (currentSection >= sections.length) currentSection = 0;
+        sections[currentSection].scrollIntoView({ behavior: "smooth" });
+    }
+
+    setInterval(autoScroll, 6000);
+
+    // GSAP fade-in animation for showcase items
+    gsap.utils.toArray('.showcase-item').forEach(item => {
+        gsap.from(item, {
+            scrollTrigger: item,
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+</script>
+
+</body>
+</html>

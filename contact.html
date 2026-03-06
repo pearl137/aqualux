@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aqualux Beverages</title>
+    <style>
+        /* Reset and general styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: #000; /* fallback if images fail */
+        }
+
+        /* Navbar */
+        header {
+            background: #001f3f;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px; /* smaller height */
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .logo span {
+            font-weight: normal;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 8px 12px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #003366;
+            border-radius: 5px;
+        }
+
+        /* Section Styles */
+        section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        .process-step {
+            margin-bottom: 15px;
+        }
+
+        /* Section Background Images */
+        #who-we-are { background-image: url('images/water-bottle.jpeg'); }
+        #production-process { background-image: url('images/terry.jpeg'); }
+        #commitment { background-image: url('images/cheluu.jpeg'); }
+
+        /* Footer */
+        footer {
+            background: #001f3f;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            h2 { font-size: 2em; }
+            p { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AQUALUX <span>Beverages</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Who We Are Section -->
+    <section id="who-we-are">
+        <div class="content">
+            <h2>Who We Are</h2>
+            <p>
+                At Aqualux Beverages, we are committed to providing the purest and most refreshing drinking water. 
+                Founded with a mission to promote health, wellness, and sustainability, our team blends innovation 
+                with care to deliver products that our customers can trust. We take pride in our transparency, quality, 
+                and passion for excellence in every drop.
+            </p>
+        </div>
+    </section>
+
+    <!-- Water Production Process Section -->
+    <section id="production-process">
+        <div class="content">
+            <h2>Our Water Production Process</h2>
+            <p class="process-step"><strong>1. Source Selection:</strong> We select natural water sources that meet the highest standards of purity.</p>
+            <p class="process-step"><strong>2. Filtration:</strong> The water undergoes a multi-stage filtration process to remove impurities and ensure clarity.</p>
+            <p class="process-step"><strong>3. Mineral Optimization:</strong> Essential minerals are balanced for a crisp, refreshing taste.</p>
+            <p class="process-step"><strong>4. Bottling:</strong> Water is bottled under strict hygienic conditions to preserve its purity and freshness.</p>
+        </div>
+    </section>
+
+    <!-- Our Commitment Section -->
+    <section id="commitment">
+        <div class="content">
+            <h2>Our Commitment</h2>
+            <p>
+                At Aqualux Beverages, sustainability and community wellness are at the heart of everything we do. 
+                From eco-friendly packaging to initiatives that reduce water waste, we are dedicated to minimizing 
+                our environmental footprint. We actively support local projects that provide access to clean water 
+                and promote healthy living for communities around us.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Aqualux Beverages (Pty) Ltd. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
